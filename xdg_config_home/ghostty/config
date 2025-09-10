@@ -1,0 +1,6 @@
+theme = light:GruvboxLight,dark:GruvboxDark
+#keybind=ctrl+k=scroll_page_lines:5 
+#keybind=ctrl+j=scroll_page_lines:-5 
+
+keybind = global:ctrl+k=scroll_page_up
+keybind = global:ctrl+j=scroll_page_down

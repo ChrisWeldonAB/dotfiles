@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+###
+# easily create and connect to current venv
+###
+
+dir="$(basename $PWD)"
+python -m venv $dir
+. ./$dir/bin/activate
+
+echo "run 'deactivate' to exist venv"
+
+

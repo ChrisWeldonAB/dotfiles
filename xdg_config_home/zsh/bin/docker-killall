@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+echo "Killing all containers ... "
+docker ps -q | xargs -I % docker container kill "%"
+echo "Containers killed, rancher will respawn it's required containers (~5)" 

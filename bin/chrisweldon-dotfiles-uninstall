@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+
+
+
+#stow -v -D xdg_config_home/ --target $XDG_CONFIG_HOME 
+#stow -v -D home/ --target $HOME 

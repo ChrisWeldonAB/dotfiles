@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+#  easy command to alter a custom bash command
+fd "$1" $ZDOTDIR/bin/ | fzf -1 -0 --tmux=70% | xargs nvim $Editor

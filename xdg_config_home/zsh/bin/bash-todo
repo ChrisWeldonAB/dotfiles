@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+rg -l '\sTODO' "$XDG_CONFIG_HOME/zsh/bin" | rg -v 'alter-new' | fzf --preview 'cat {}' --header "Commands that need work!" --height 40% --tmux 70% | xargs nvim
+

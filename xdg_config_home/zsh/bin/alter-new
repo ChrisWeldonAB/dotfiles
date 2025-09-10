@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh
+
+bin="$XDG_CONFIG_HOME/zsh/bin/"
+file="$bin$1"
+
+if [[ -f $file ]]; then
+    echo "$1 already exists"
+    exit 1
+fi
+
+
+echo "#!/usr/bin/env zsh" > $file
+echo "###" >> $file
+echo "# TODO: Implement your fancy new bash command here! " >> $file
+echo "###" >> $file
+chmod u+x $file
+
+echo "$file"

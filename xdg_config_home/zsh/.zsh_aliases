@@ -1,0 +1,12 @@
+
+alias timezsh='for i in $(seq 1 10); do time zsh -i -c exit; done'
+
+# TMUX
+alias t='tmux'
+alias ta='tmux attach'
+
+alias dm='toggle-dark' #dm for dark-mode, not using td because that implies it's a tmux function
+
+
+
+

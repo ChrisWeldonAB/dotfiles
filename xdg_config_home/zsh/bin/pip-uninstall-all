@@ -1,0 +1,2 @@
+#!/usr/bin/env zsh
+pip freeze | awk -F== '{print $1}' | xargs pip uninstall -y

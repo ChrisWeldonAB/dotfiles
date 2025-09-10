@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+### A convenience function for finding and editing config files
+
+# TODO an nvim hook which resources the file would be sick
+ls -a $HOME/.config | \
+    fzf -1 --query="$1" --height 30% --tmux 70% --preview "ls -a $XDG_CONFIG_HOME/{}" --header "CONFIGURATIONS" | \
+    xargs -I % nvim $XDG_CONFIG_HOME/%
+
+
+

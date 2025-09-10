@@ -1,0 +1,21 @@
+#!/usr/bin/env zsh
+
+# TODO: implement the following
+# Stow all this files into the $XDG_CONFIG_HOME directory
+#   adopt any files in the stow directory
+# simlink any individualfiles like .zshenv or .npmrc or whatever into right location
+#   maybe alter .zshenv or .npmrc by appending stuff if its there
+
+stow -v --stow xdg_config_home/ --target $XDG_CONFIG_HOME 
+stow -v --stow home/ --target $HOME 
+
+zshenv_addition="
+### AUTOMATIC ADDITION BY ChrisWeldonAB/dotfiles
+export ZDOTDIR=\$XDG_CONFIG_HOME/zsh # ChrisWeldonAB/dotfiles
+export PATH=\$PATH:$(pwd)/bin # ChrisWeldonAB/dotfiles
+### ChrisWeldonAB/dotfiles
+"
+
+echo "$zshenv_addition" >> $HOME/.zshenv
+
+echo "DOTFILES INSTALLED into $XDG_CONFIG_HOME!"
