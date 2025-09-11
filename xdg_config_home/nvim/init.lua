@@ -66,7 +66,6 @@ vim.cmd([[colorscheme gruvbox]])
 -- vim.cmd([[colorscheme rose-pine]])
 
 require('telescope').load_extension('harpoon') -- not entirely sure why these need to integrate TODO
-require('telescope').load_extension('chezmoi') -- handles searching through config file
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = { os.getenv("HOME") .. "/.local/share/chezmoi/*" },
