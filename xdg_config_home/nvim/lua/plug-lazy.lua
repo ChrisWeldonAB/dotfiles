@@ -319,7 +319,8 @@ require('lazy').setup({
                             default_workspace = "notes",
                             workspaces = {
                                 notes = "~/Notes",
-                                qsi = "~/Projects/qsi_taskforce" -- this is ABI Work Specific
+                                qsi = "~/Projects/qsi_taskforce", -- this is ABI Work Specific
+                                cahier = "~/Notes/cahier" -- this is ABI Work Specific
                             }
                         }
                     },
