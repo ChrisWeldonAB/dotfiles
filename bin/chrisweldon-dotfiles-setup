@@ -5,9 +5,15 @@
 #   adopt any files in the stow directory
 # simlink any individualfiles like .zshenv or .npmrc or whatever into right location
 #   maybe alter .zshenv or .npmrc by appending stuff if its there
+#
+
+
+// TODO commit tmux.conf.local and install the rest from gpakosz/.tmux.git
+// This includes tpm
 
 stow -v --stow xdg_config_home/ --target $XDG_CONFIG_HOME 
 stow -v --stow home/ --target $HOME 
+
 
 zshenv_addition="
 ### AUTOMATIC ADDITION BY ChrisWeldonAB/dotfiles
