@@ -3,5 +3,7 @@
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.config/zsh/bin"
 
+alias k="kubectl"
+
 clear
 fastfetch
