@@ -20,16 +20,6 @@ require('lazy').setup({
             "lua-utils"
         }
     },
-    {
-        "nvim-neorg/neorg",
-        dependencies = {"luarocks.nvim"},
-        lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
-        version = "*", -- Pin Neorg to the latest stable release
-        config = function()
-            require('neorg').setup({
-
-            })
-        end,
     }, ]]--
     {
         "rktjmp/lush.nvim",
@@ -303,22 +293,40 @@ require('lazy').setup({
         'christoomey/vim-tmux-navigator',
         lazy = false
     },
-
-    -- Lazy.nvim
     {
-      'xvzc/chezmoi.nvim',
-      dependencies = { 'nvim-lua/plenary.nvim' },
-      config = function()
-        require("chezmoi").setup {
-            --  e.g. ~/.local/share/chezmoi/*
-            edit = {
-                watch = true,
-            },
-            notification = {
-                on_watch = true,
-            },
-        }
-      end
-    },
+        "nvim-neorg/neorg",
+        lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+        version = "*", -- Pin Neorg to the latest stable release
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-neorg/neorg-telescope"
+        },
+        config = function()
+            require("neorg").setup({
+                load = {
+                    ["core.defaults"] = {},
+                    ["core.concealer"] = {},
+                    ["core.journal"] = {
+                        config = {
+                            workspace = "notes"
+                        }
+                    },
+                    ["core.summary"] = {
 
+                    },
+                    ["core.dirman"] = {
+                        config = {
+                            default_workspace = "notes",
+                            workspaces = {
+                                notes = "~/Notes",
+                                qsi = "~/Projects/qsi_taskforce", -- this is ABI Work Specific
+                                cahier = "~/Notes/cahier" -- this is ABI Work Specific
+                            }
+                        }
+                    },
+                    ["core.integrations.telescope"] = {},
+                }
+            })
+        end
+    }
 })
